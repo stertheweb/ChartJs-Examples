@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Doughnut Chart</title>
+  </head>
+  <body>
+
+    <div class="chart">
+    <canvas id="myChart" width="600" height="400"></canvas>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script>
+
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ["Russell Westbrook", "James Harden", "Kawhi Leonard", "LeBron James", "Isaiah Thomas"],
+      datasets: [{
+        backgroundColor: [
+          "#007DC3",
+          "#CE1141",
+          "#B6BFBF",
+          "#860038",
+          "#008348"
+        ],
+        data: [42, 34, 13, 7, 4]
+      }]
+    }
+  });
+  </script>
+  </body>
+</html>
