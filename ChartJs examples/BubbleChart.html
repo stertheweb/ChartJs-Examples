@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bubble Chart</title>
+  </head>
+  <body>
+
+    <div class="chart">
+      <h2>Usage Rate vs Height and BMI</h2>
+      <canvas id="myChart" width="600" height="400"></canvas>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script>
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bubble',
+    data: {
+      datasets: [
+        {
+          label: "Russell Westbrook",
+          data: [
+            {
+              x: 41.7,
+              y: 75,
+              r: 25.0
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Isaiah Thomas",
+          data: [
+            {
+              x: 34.0,
+              y: 69,
+              r: 27.3
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Damian Lillard",
+          data: [
+            {
+              x: 31.5,
+              y: 75,
+              r: 24.4
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "James Harden",
+          data: [
+            {
+              x: 34.2,
+              y: 77,
+              r: 26.1
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Kyrie Irving",
+          data: [
+            {
+              x: 30.7,
+              y: 75,
+              r: 24.1
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "John Wall",
+          data: [
+            {
+              x: 30.6,
+              y: 76,
+              r: 23.7
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Stephen Curry",
+          data: [
+            {
+              x: 30.2,
+              y: 75,
+              r: 23.7
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Kemba Walker",
+          data: [
+            {
+              x: 29.2,
+              y: 73,
+              r: 22.7
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Eric Bledsoe",
+          data: [
+            {
+              x: 28.2,
+              y: 73,
+              r: 25.1
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        },
+        {
+          label: "Dennis Schröder",
+          data: [
+            {
+              x: 27.7,
+              y: 73,
+              r: 22.7
+            }
+          ],
+          backgroundColor: getRandomColor(),
+          hoverBackgroundColor: "#ffffff"
+        }
+      ]
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+                    label: function(tooltipItem, data) {
+                        rLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].r;
+                        rNum = parseFloat(rLabel).toFixed(2);
+                        var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+                        return datasetLabel + ': ' + rNum + '' + tooltipItem.yLabel + ' BMI';
+                    }
+                }
+      },
+      scales: {
+        xAxes: [{
+          position: "top",
+          scaleLabel: {
+            display: true,
+            labelString: "Usage Rate (%)",
+            fontFamily: "Montserrat",
+            fontColor: "black",
+          },
+          ticks: {
+            fontFamily: "Montserrat",
+          }
+        }],
+        yAxes: [{
+          position: "left",
+          scaleLabel: {
+            display: true,
+            labelString: "Height (in.)",
+            fontFamily: "Montserrat",
+            fontColor: "black",
+          },
+          ticks: {
+            fontFamily: "Montserrat",
+          }
+        }],
+      },
+    }
+  });
+  </script>
+  </body>
+</html>
