@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Scatter Chart</title>
+  </head>
+  <body>
+
+    <div class="chart">
+      <h2>Cost of Airline Ticket (USD) vs Distance in km From Hub (SFO)</h2>
+    <canvas id="myChart" width="600" height="400"></canvas>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script>
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    var setColor = [];
+
+    for (var j = 0; j < 25; j++) {
+        setColor[j] = getRandomColor();
+    }
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: "Los Angeles",
+            data: [
+              {
+                x: 162,
+                y: 543.16
+              }
+            ],
+            pointBackgroundColor: setColor[0],
+            backgroundColor: setColor[0],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Chicago",
+            data: [
+              {
+                x: 397,
+                y: 2963.82
+              }
+            ],
+            backgroundColor: setColor[1],
+            pointBackgroundColor: setColor[1],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Las Vegas",
+            data: [
+              {
+                x: 114,
+                y: 664.86
+              }
+            ],
+            backgroundColor: setColor[2],
+            pointBackgroundColor: setColor[2],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "New York",
+            data: [
+              {
+                x: 462,
+                y: 4151.59
+              }
+            ],
+            backgroundColor: setColor[3],
+            pointBackgroundColor: setColor[3],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Seattle",
+            data: [
+              {
+                x: 270,
+                y: 1093.01
+              }
+            ],
+            backgroundColor: setColor[4],
+            pointBackgroundColor: setColor[4],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Denver",
+            data: [
+              {
+                x: 223,
+                y: 1552.7
+              }
+            ],
+            backgroundColor: setColor[5],
+            pointBackgroundColor: setColor[5],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Newark",
+            data: [
+              {
+                x: 591,
+                y: 4118.2
+              }
+            ],
+            backgroundColor: setColor[6],
+            pointBackgroundColor: setColor[6],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "San Diego",
+            data: [
+              {
+                x: 236,
+                y: 718.85
+              }
+            ],
+            backgroundColor: setColor[7],
+            pointBackgroundColor: setColor[7],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Boston",
+            data: [
+              {
+                x: 520,
+                y: 4341.03
+              }
+            ],
+            backgroundColor: setColor[8],
+            pointBackgroundColor: setColor[8],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Dallas",
+            data: [
+              {
+                x: 238,
+                y: 2351.83
+              }
+            ],
+            backgroundColor: setColor[9],
+            pointBackgroundColor: setColor[9],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Phoenix",
+            data: [
+              {
+                x: 235,
+                y: 1045.99
+              }
+            ],
+            backgroundColor: setColor[10],
+            pointBackgroundColor: setColor[10],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "London",
+            data: [
+              {
+                x: 1101,
+                y: 8615.58
+              }
+            ],
+            backgroundColor: setColor[11],
+            pointBackgroundColor: setColor[11],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Hong Kong",
+            data: [
+              {
+                x: 693,
+                y: 11127.34
+              }
+            ],
+            backgroundColor: setColor[12],
+            pointBackgroundColor: setColor[12],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Taipei",
+            data: [
+              {
+                x: 562,
+                y: 10368.47
+              }
+            ],
+            backgroundColor: setColor[13],
+            pointBackgroundColor: setColor[13],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Seoul",
+            data: [
+              {
+                x: 522,
+                y: 9084.83
+              }
+            ],
+            backgroundColor: setColor[14],
+            pointBackgroundColor: setColor[14],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Frankfurt",
+            data: [
+              {
+                x: 832,
+                y: 9147.7
+              }
+            ],
+            backgroundColor: setColor[15],
+            pointBackgroundColor: setColor[15],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Vancouver",
+            data: [
+              {
+                x: 233,
+                y: 1288.65
+              }
+            ],
+            backgroundColor: setColor[16],
+            pointBackgroundColor: setColor[16],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Paris",
+            data: [
+              {
+                x: 762,
+                y: 8961.78
+              }
+            ],
+            backgroundColor: setColor[17],
+            pointBackgroundColor: setColor[17],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Toronto",
+            data: [
+              {
+                x: 469,
+                y: 3627.12
+              }
+            ],
+            backgroundColor: setColor[18],
+            pointBackgroundColor: setColor[18],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Beijing",
+            data: [
+              {
+                x: 686,
+                y: 9493.61
+              }
+            ],
+            backgroundColor: setColor[19],
+            pointBackgroundColor: setColor[19],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Tokyo",
+            data: [
+              {
+                x: 558,
+                y: 8227.15
+              }
+            ],
+            backgroundColor: setColor[20],
+            pointBackgroundColor: setColor[20],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Dubai",
+            data: [
+              {
+                x: 720,
+                y: 13019.44
+              }
+            ],
+            backgroundColor: setColor[21],
+            pointBackgroundColor: setColor[21],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Shanghai",
+            data: [
+              {
+                x: 571,
+                y: 9876.94
+              }
+            ],
+            backgroundColor: setColor[22],
+            pointBackgroundColor: setColor[22],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Mexico City",
+            data: [
+              {
+                x: 316,
+                y: 3028.27
+              }
+            ],
+            backgroundColor: setColor[23],
+            pointBackgroundColor: setColor[23],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          },
+          {
+            label: "Sydney",
+            data: [
+              {
+                x: 1015,
+                y: 11949.17
+              }
+            ],
+            backgroundColor: setColor[24],
+            pointBackgroundColor: setColor[24],
+            pointHoverBackgroundColor: "#000000",
+            pointStyle: 'triangle'
+          }
+        ]
+      },
+      options: {
+        tooltips: {
+          callbacks: {
+              label: function(tooltipItem, data) {
+              var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+              return datasetLabel + ': $' +tooltipItem.xLabel;
+              }
+          }
+        },
+        scales: {
+          xAxes: [{
+            position: "bottom",
+            scaleLabel: {
+              display: true,
+              labelString: "Cost of Airline Ticket (USD)",
+              fontFamily: "Montserrat",
+              fontColor: "black",
+            },
+            ticks: {
+              fontFamily: "Montserrat",
+            }
+          }],
+          yAxes: [{
+            position: "left",
+            scaleLabel: {
+              display: true,
+              labelString: "Distance in km From Hub (SFO)",
+              fontFamily: "Montserrat",
+              fontColor: "black",
+            },
+            ticks: {
+              fontFamily: "Montserrat",
+            }
+          }],
+        },
+      }
+    });
+    </script>
+    </body>
+  </html>
