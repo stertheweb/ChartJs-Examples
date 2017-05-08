@@ -154,9 +154,9 @@
         callbacks: {
                     label: function(tooltipItem, data) {
                         rLabel = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].r;
-                        rNum = parseFloat(rLabel).toFixed(2);
+                        rNum = parseFloat(rLabel);
                         var datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
-                        return datasetLabel + ': ' + rNum + '' + tooltipItem.yLabel + ' BMI';
+                        return datasetLabel + ': ' + rNum + ' BMI';
                     }
                 }
       },
